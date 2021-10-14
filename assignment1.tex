@@ -1,1 +1,330 @@
-here
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{setspace}
+\usepackage{gensymb}
+\singlespacing
+\usepackage[cmex10]{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\raggedbottom
+\setlength{\parindent}{0pt}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+%\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+%\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+%\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{Assignment 1}
+\author{Yaswanth Naidu - EE18BTECH11024}
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+Download all C codes from 
+\begin{lstlisting}
+https://github.com/Yaswanthkarri999/assignment1/blob/main/assignment1.c
+\end{lstlisting}
+%
+and latex-tikz codes from 
+%
+\begin{lstlisting}
+https://github.com/Yaswanthkarri999/assignment1/blob/main/assignment1.tex
+\end{lstlisting}
+\section{Problem}
+
+
+Consider three registers R1, R2, R3 that store numbers in IEEE-754 single precision floating point format. Assume that R1, R2 contain the values ( in hexadecimal notation ). 0x42200000, 0xc1200000. If R3 = (R1/R2) what is the value stored in R3.
+
+
+
+
+
+
+\begin{lstlisting}
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<math.h>
+double number(char str[]){
+    char S[1];
+    strncpy(S, str + 0, 0);
+    char E[8];
+    strncpy(E, str + 1, 8);
+    char M[23];
+    strncpy(M, str + 9, 22);
+    int frac = 0;
+    for(int i = 0;i<strlen(E);i++)
+    {
+        if(E[i] == '1')
+        {
+            frac = frac*2 + 1;
+        }
+        else
+        {
+            frac = frac*2 + 0;
+        }
+    }
+    
+    double expnt = 0;
+    for(int i = 0;i<strlen(M);i++)
+    {
+        if(M[i] == '1')
+        {
+            expnt += 1*(pow(2,-i-1));
+        }
+    }
+    int sign = 1;
+    if(str[0] == '1'){
+        sign = -1;
+    }
+    double exp = 1+expnt;
+    double ten = pow(2,frac-127);
+    double ans = sign*exp*ten;
+	return ans;
+	
+}
+int main(){
+    int a = 0x42200000;
+    char b[32];
+    itoa(a,b,2);
+    char op[] = "0";
+    strcat(op,b);
+    double first = number(op);
+
+    int a_1  = 0xC1200000;
+    char b_1[32];
+    itoa(a_1,b_1,2);
+    double second = number(b_1);
+    printf("%lf",first/second);
+    
+}
+\end{lstlisting}
+
+
+\section{Explanation}
+
+In IEEE-754 single precision format,a floating point number is represented in 32 bits.
+\\
+
+1.Sign bit (MSB) - 1 bit
+\\
+2.Biased exponent - 8 bit
+\\
+3.Normalized mantissa - 23 bit
+\\
+
+Sign bit value 0 means positive number and 1 means negative number.
+\\
+
+The floating point number can be obtained by formula : \pm 1.M * 2$ ^ (E-127)$
+
+
+
+
+Given R1 as 0x 42200000
+
+R2 as 0x c1200000
+
+\subsection{Calculation}
+
+
+Content of R1 in HEX (0x) is 42200000. After converting into binary it can be represented in IEEE-754 format as 
+\\
+
+
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ 0 & 100 0010 0 & 010 0000 0000 0000 0000 0000 \\ 
+  
+ \hline
+\end{tabular}
+\end{center}
+
+
+
+Sign bit is 0, i.e, the number is positive
+\\
+\\
+Biased exponent ( E') = 100 0010 0 = 132
+\\
+\\
+Normalized Mantissa ( M ) = 010 0000 0000 0000 0000 0000 = 0.25
+\\
+\\
+Therefore the number in register R1 = +1.25 * 2$ ^ ( 132-127)$ =  1.25 * 32 = 40
+\\
+\\
+Content of R2 in Hex (0x) is c1200000.  After converting into binary it can be represented in IEEE-754 format as 
+\\
+\\
+
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ 1 & 100 0001 0 & 010 0000 0000 0000 0000 0000 \\ 
+  
+ \hline
+\end{tabular}
+\end{center}
+
+
+Sign bit is 1. i.e, the number is negative
+\\
+\\
+Biased exponent ( E') = 100 0001 0 = 130
+\\
+\\
+Normalized Mantissa ( M ) = 010 0000 0000 0000 0000 0000 = 0.25
+\\
+\\
+Therefore the number in register R2 = -1.25 * 2$ ^ ( 130-127)$ = -1.25 * 8 = -10
+\\
+\\
+R3 = (R1 / R2) = 40 / (-10 ) = -4
+\\
+\\
+Since the number is negative, sign bit ( MSB) = 1
+\\
+\\
+Converting 4 into binary of a floating point gives : (100.0) 2
+\\
+\\
+Representing it into normalized form gives (1.00000...) * 2**2
+\\
+Therefore, mantissa is 23 bits of all 0s
+\\
+\\
+Biased exponent ( E' ) = E + 127 = 2 + 127 = 129 = (10000001) 2
+\\
+\\
+It can be represented in IEEE-754 format as :
+\\
+
+
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ 1 & 100 0000 1 & 000 0000 0000 0000 0000 0000 \\ 
+  
+ \hline
+\end{tabular}
+\end{center}
+
+
+Converting it into Hexadecimal format gives : 0x C0800000
+
+
+
+\end{document}
